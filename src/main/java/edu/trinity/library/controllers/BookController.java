@@ -15,12 +15,12 @@ import java.util.List;
 public class BookController {
     private final BookRepository repository;
 
-    @Autowired
+    @Autowired // Do you have a book repository bean in the application context? if so, supply a reference
     public BookController (BookRepository repository) {
         this.repository = repository;
     }
 
-    @GetMapping("/books") // http://localhost:8080/books
+    @GetMapping({"/books", "/books/"}) // http://localhost:8080/books
     public List<Book> getAllBooks() {
         return repository.findAll();
     }

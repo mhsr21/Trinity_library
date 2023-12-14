@@ -14,7 +14,7 @@ import java.util.Objects;
 
 @Entity
 public class Book {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // ID is supplied to it; IDENTITY -> consecutively
     private Long id;
 
     @NotBlank(message = "Title is required")
